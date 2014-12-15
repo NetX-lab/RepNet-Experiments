@@ -1,0 +1,6 @@
+# Start the ECMP controller
+./pox.py DCController --topo=ft,6 --routing=ECMP
+
+# Run the Mininet script
+cd ~/mininet-repnet/
+sudo ./batch.sh TIME_YOU_WISH_TO_RUN
