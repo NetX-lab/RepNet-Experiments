@@ -55,17 +55,12 @@ plt.bar(load+0.013, mat[2, :], 0.026, color='0.95', hatch='/', label="RepSYN")
 plt.legend(loc='upper left', fontsize='medium')
 #plt.yscale('log')
 
-plt.xlabel('Average Bottleneck Traffic Load')
+plt.xlabel('Average Traffic Load')
+plt.ylabel('Average FCT')
 
 plt.tight_layout(rect=(0,0,1,1))
 plt.grid()
-plt.savefig("avg.pdf", format='pdf')
+plt.savefig("mininet-avg.pdf", format='pdf')
 plt.show()
-
-
-
-
-
-
 
 

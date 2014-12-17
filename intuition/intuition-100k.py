@@ -41,9 +41,9 @@ for i in x:
   xlab.append(i)
 
 plt.figure(figsize=(6,6))
-plt.plot(p1, xlab, 'b-', label="TCP", linewidth=3, markersize=4)
-plt.plot(p2, xlab, 'y-', label="RepFlow", linewidth=3, markersize=4)
-plt.plot(p3, xlab, 'r-', label="RepSYN", linewidth=3, markersize=4)
+plt.plot(p1, xlab, 'b-', label="One Single TCP TX", linewidth=3, markersize=4)
+plt.plot(p2, xlab, 'y-', label="Faster of the Two \nConcurrent TXs", linewidth=3, markersize=4)
+plt.plot(p3, xlab, 'r-', label="TX using Connection\nwith a Faster RTT", linewidth=3, markersize=4)
 plt.legend(loc='lower right', fontsize='medium')
 #plt.yscale('log')
 #plt.xscale('log')

@@ -55,11 +55,12 @@ plt.bar(load+0.013, mat[2, :], 0.026, color='0.95', hatch='/', label="RepSYN")
 plt.legend(loc='upper left', fontsize='medium')
 #plt.yscale('log')
 
-plt.xlabel('Average Bottleneck Traffic Load')
+plt.xlabel('Average Traffic Load')
+plt.ylabel('99th percentile FCT')
 
 plt.tight_layout(rect=(0,0,1,1))
 plt.grid()
-plt.savefig("99-percentile.pdf", format='pdf')
+plt.savefig("mininet-99.pdf", format='pdf')
 plt.show()
 
 
