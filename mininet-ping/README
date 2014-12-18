@@ -1,0 +1,4 @@
+# Be sure to link the new DCController-ping in the POX directory
+# With working directory ~/pox/ext/
+ln -s ~/repnet_experiment/mininet-ping/DCController-ping.py
+ln -s ~/hedera/HController.py
