@@ -3,6 +3,13 @@
 ln -s ~/repnet_experiment/mininet-ping/DCController-ping.py
 ln -s ~/hedera/HController.py
 
+# Start the controller. Working directory: ~/pox/
+./pox.py DCController-ping.py --topo=ft,6 --routing=ECMP
+
 #When the traffic is up, just xterm three hosts under the same rack, run
 ping -c1000000 -i0.1 10.0.X.Y > pingZ.dat
 # simultaneously
+
+# To ensure simultaneous probing, the ping process in added to the script
+sudo python run_experiment.py 10000000 0.3
+# Then wait for the program to exit normally
