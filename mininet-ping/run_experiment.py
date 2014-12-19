@@ -23,6 +23,9 @@ if __name__ == '__main__':
     for i in range(0, hnum):
         h[i].cmd("python ~/mininet-repnet/run_time_load_id.py " + runtime + " " + load + " " + str(i) + " &")
 
-    net.interact()
+    h[3].cmd("ping -c10000 -i0.1 10.5.1.2 > ping2.trace & ")
+    h[4].cmd("ping -c10000 -i0.1 10.5.1.3 > ping3.trace & ")
+    h[5].cmd("ping -c10000 -i0.1 10.5.1.4 > ping4.trace ")
+
     time.sleep(3)
     net.stop()
