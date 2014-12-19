@@ -20,9 +20,9 @@ if __name__ == '__main__':
     hnum = len(h)
     time.sleep(5)
 
-    for i in range(0, hnum - 1):
+    for i in range(0, hnum):
         h[i].cmd("python ~/mininet-repnet/run_time_load_id.py " + runtime + " " + load + " " + str(i) + " &")
-    h[hnum-1].cmdPrint("python ~/mininet-repnet/run_time_load_id.py " + runtime + " " + load + " " + str(hnum-1))
 
+    net.interact()
     time.sleep(3)
     net.stop()

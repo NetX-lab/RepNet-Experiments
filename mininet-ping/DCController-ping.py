@@ -22,7 +22,7 @@ from pox.lib.recoco import Timer
 from pox.lib.packet.ipv4 import ipv4
 from pox.lib.packet.udp import udp
 from pox.lib.packet.tcp import tcp
-from pox.lib.packet import pkt
+import pox.lib.packet as pkt
 
 from util import buildTopo, getRouting
 
