@@ -126,7 +126,7 @@ class DCController(EventMixin):
         hash_ = self._ecmp_hash(packet)
 
         # EDIT: if ICMP (ping), then routed to a fixed destination
-        if packet.protocol == pkt.ICMP_PROTOCOL:
+        if packet.payload.protocol == pkt.ICMP_PROTOCOL:
             ip = packet.next
             pingrank = (ip.srcip.toUnsigned()) % 6
             route = self.r.get_route(in_name, out_name, pingrank)
