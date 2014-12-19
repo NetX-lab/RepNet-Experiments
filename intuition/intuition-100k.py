@@ -40,7 +40,7 @@ for i in x:
   p3.append(getpt(syn, i))
   xlab.append(i)
 
-plt.figure(figsize=(6,6))
+plt.figure(figsize=(6, 4.6))
 plt.plot(p1, xlab, 'b-', label="One Single TCP TX", linewidth=3, markersize=4)
 plt.plot(p2, xlab, 'y-', label="Faster of the Two \nConcurrent TXs", linewidth=3, markersize=4)
 plt.plot(p3, xlab, 'r-', label="TX using Connection\nwith a Faster RTT", linewidth=3, markersize=4)

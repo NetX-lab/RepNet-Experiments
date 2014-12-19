@@ -38,7 +38,7 @@ for i in x:
   p2.append(getpt(rep, i))
   xlab.append(i)
 
-plt.figure(figsize=(6,6))
+plt.figure(figsize=(6, 4.6))
 plt.plot(p1, xlab, 'b-', label="Single TCP Connection", linewidth=3, markersize=4)
 plt.plot(p2, xlab, 'r-', label="Minimum of Two\nConcurrent Connections", linewidth=3, markersize=4)
 plt.legend(loc='lower right', fontsize='medium')
@@ -47,7 +47,7 @@ plt.legend(loc='lower right', fontsize='medium')
 plt.ylabel('(%)')
 plt.xlabel('Connection Establishing Time (ms)')
 #plt.yticks([0.1, 0.2, 0.5, 1, 2, 4, 8, 16, 32, 64], [99.9, 99.8, 99.5, 99, 98, 96, 92, 84, 68, 36])
-#plt.xticks([20, 50, 100, 200, 500, 1000], [20, 50, 100, 200, 500, 1000])
+plt.xticks(np.arange(2.4, 3.5, 0.2), np.arange(2.4, 3.5, 0.2))
 plt.yticks([0, 33.3, 66.7, 88.9, 100], [0, 33.3, 66.7, 88.9, 100])
 
 #plt.xlim([94, 1300])
