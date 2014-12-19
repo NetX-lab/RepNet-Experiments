@@ -22,7 +22,7 @@ from pox.lib.recoco import Timer
 from pox.lib.packet.ipv4 import ipv4
 from pox.lib.packet.udp import udp
 from pox.lib.packet.tcp import tcp
-import pox.lib.packet as pkt
+from pox.lib.packet.icmp import icmp
 
 from util import buildTopo, getRouting
 
@@ -126,10 +126,14 @@ class DCController(EventMixin):
         hash_ = self._ecmp_hash(packet)
 
         # EDIT: if ICMP (ping), then routed to a fixed destination
-        if packet.payload.protocol == pkt.ICMP_PROTOCOL:
-            ip = packet.next
-            pingrank = (ip.srcip.toUnsigned()) % 6
-            route = self.r.get_route(in_name, out_name, pingrank)
+        ip = packet.find('ipv4')
+        if ip is not None:
+	    icmp_packet = packet.find('icmp')
+            if icmp_packet is not None:
+                pingrank = (ip.srcip.toUnsigned()) % 6
+                route = self.r.get_route(in_name, out_name, pingrank)
+            else:
+                route = self.r.get_route(in_name, out_name, hash_) 
         else:
             route = self.r.get_route(in_name, out_name, hash_) 
         if route is None:
