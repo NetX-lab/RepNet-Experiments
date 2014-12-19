@@ -23,9 +23,9 @@ for i in range(3):
   rttdata.append(np.loadtxt(rtt[i], dtype='str'))
   rttdata[i] = rttdata[i][:, 6]
   rttdata[i] = [float(j[5:]) for j in rttdata[i]]
-  rttdata[i] = np.array(rttdata[i][:8000])
+  rttdata[i] = np.array(rttdata[i][3000:5000])
 
-x = np.arange(0, 800, 0.1)
+x = np.arange(0, 200, 0.1)
 
 plt.figure(1, figsize=(6,6))
 plt.subplot(311)
