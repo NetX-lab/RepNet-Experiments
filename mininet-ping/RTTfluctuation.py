@@ -27,7 +27,7 @@ for i in range(3):
 
 x = np.arange(0, 200, 0.1)
 
-plt.figure(1, figsize=(6,6))
+plt.figure(1, figsize=(7,5.5))
 plt.subplot(311)
 plt.plot(x, rttdata[0], 'b-', linewidth=1)
 plt.ylim([0.1, 5])
